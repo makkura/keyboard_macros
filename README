@@ -1,0 +1,31 @@
+This project simulates the macro keys commonly found on gaming keyboards.
+I was tired of having the macro software on my keyboard crash when attempting to make simple macros so opted to write this instead.
+
+The program is designed around Final Fantasy XIV and only contains the basic macros I need.
+
+Note:
+Because this is inteded to act only as macros on a keyboard can, it is intentionally designed to avoid advanced features found outside of a macro system. 
+It does not read memory and does not send keys to processes out of focus.
+This is not a bot.
+
+The macros below are utility macros for simple, tedious actions so have long key press delays.
+The program does not intercept keypresses so must be told what macro to run so it is not useful for combat macros.
+
+Usage:
+Run ffi_macros.rb
+Choose the action:
+(GC) Buy
+(Re)peat Craft
+
+Input the number of times to run.
+The macro will start in 15 seconds, be sure the program it needs to press keys in is the active window and the cursor is on the right item or crafting recipe.
+
+Editing:
+To add a macro, add a method to class Commands in keys.rb for the new macro.
+Use Commands.GCBuy and Commands.RepeatCraft as examples on how to get key presses arranged.
+Each normal key press has a 1 second delay after pressing them.
+Add a sleep timer if you need to wait after each key press.
+
+Potential Features:
+Break off from specific internal functions to make macros and instead import them from a seperate file following a pattern system to parse so macros can be easily made without editing the code itself.
+Automatic menu generation for these macros would be required so they could be called.
